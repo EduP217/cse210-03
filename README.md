@@ -40,7 +40,7 @@ root                    (project root folder)
 ```
 
 # Project Design
-* Parachute class
+* Parachute class   (Oscar)
     -   This class initialize the parachute string
              ___
             /___\
@@ -53,20 +53,20 @@ root                    (project root folder)
     -   This class has a function to check the parachute and change the status value
         - if the status is dead, change the parachute from 'o' to 'x'
 
-* Player class
+* Player class  (Yurinii)
     -   This class initialize the letter guessed
         guessed = []
         guessed = ['c', 'a', 'b']
     
     -   This class has a function to ask the player for a letter
 
-* Puzzle class
+* Puzzle class  (Edu)
     -   This class initialize the static list of words
     -   This class initialize the random word selected
     -   This class has functions that return the value of the variables
     -   This class has a function to make a random selection for the word of the list
 
-* Game class
+* Game class    (Edu)
     -   This class initialize the guessed variable [True, False]
     -   This class initialize an object of Player
     -   This class initialize an object of Puzzle
