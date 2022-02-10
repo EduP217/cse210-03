@@ -1,4 +1,5 @@
 import random
+
 """
 class Puzzle
 """
@@ -10,6 +11,9 @@ class Puzzle:
     """
     
     def __init__(self):
+        """
+        Init method : Construct a new instance of the class
+        """
         self.__words_list = [
             "peel",
             "Lawnmower",
@@ -76,13 +80,30 @@ class Puzzle:
         self.__word_selected = ""
     
     def random_select_word(self):
+        """
+        Random select word method : select one item of the word list and set into a private attribute.
+        """
         self.__word_selected = random.choice(self.__words_list)
     
     def get_words_list(self):
+        """
+        Get words list method : return the private word list value.
+        """
         return self.__words_list
     
     def get_word_selected(self):
-        return self.__word_selected
+        """
+        Get word selected : return the private word selected randomly.
+        """
+        return self.__word_selected.lower()
     
     def get_word_selected_length(self):
-        return len(self.__word_selected)
+        """
+        Get word selected length : return the word length of the private attribute.
+        """
+        letters = []
+        for letter in self.__word_selected:
+            if letter != ' ':
+                letters.append(letter)
+        
+        return len(letters)

@@ -40,6 +40,7 @@ root                    (project root folder)
 ```
 
 # Project Design
+## Every class will be encapsulated and define methods to access and change values of attributes
 * Parachute class   (Oscar)
     -   This class initialize the parachute string
              ___
@@ -52,6 +53,7 @@ root                    (project root folder)
     -   This class has functions that return the value of the variables
     -   This class has a function to check the parachute and change the status value
         - if the status is dead, change the parachute from 'o' to 'x'
+    -   This class has a function to return the message of the parachute status
 
 * Player class  (Yurinii)
     -   This class initialize the letter guessed
@@ -59,15 +61,18 @@ root                    (project root folder)
         guessed = ['c', 'a', 'b']
     
     -   This class has a function to ask the player for a letter
+    -   This class has a function to print the player letters guessed
+    -   This class has a function to return the quantity of letters guessed
 
 * Puzzle class  (Edu)
     -   This class initialize the static list of words
     -   This class initialize the random word selected
     -   This class has functions that return the value of the variables
     -   This class has a function to make a random selection for the word of the list
+    -   This class has a function to calculate the quantity of letters to guess
 
 * Game class    (Edu)
-    -   This class initialize the guessed variable [True, False]
+    -   This class initialize the is_running variable [True, False]
     -   This class initialize an object of Player
     -   This class initialize an object of Puzzle
     -   This class initialize an object of Parachute
@@ -79,5 +84,3 @@ root                    (project root folder)
         -   In this function, validates the parachute status
         -   If parachute is 'dead' end process
         -   else, validates the word guessed, if it's true game ends.
-    
-    - This class has the function validate_word_guessed

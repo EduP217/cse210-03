@@ -14,21 +14,24 @@ class Player:
         Args:
             self (Player): An instance of Player.
         """
-        self._guessed_letters_list = []
+        self.__guessed_letters_list = []
 
-    def ask_the_player(self):
+    def ask_the_player(self, word_selected):
         """Ask the player for a guessed letter.
         
         Args:
             self (Player): An instance of Player.
         """
-        ask_letter = input('Guess a letter [a-z]: ')
-        self._guessed_letter.append(ask_letter)
+        ask_letter = input('Guess a letter [a-z]: ').lower()
         
+        if ask_letter in word_selected:
+            self.__guessed_letters_list.append(ask_letter)
+            return True
+        
+        return False
     
     def get_guessed_letters(self, word_selected):
-        """Clear the selected word of any spaces.
-        Print the correct guessed letters entered by
+        """Print the correct guessed letters entered by
         the pLayer based on the random selected word.
         
         Args:
@@ -36,12 +39,19 @@ class Player:
             word_selected (string): The random selected word for the player to guess.
         """
         guessed_letters = ''
-        clean_word_selected = word_selected.strip()
-        for letter in clean_word_selected:
-            if letter in self._guessed_letters_list:
+        for letter in word_selected:
+            if letter == ' ':
                 guessed_letters += letter
             else:
-                guessed_letters += '_'
+                if letter in self.__guessed_letters_list:
+                    guessed_letters += letter
+                else:
+                    guessed_letters += '_'
+            
+            guessed_letters += ' '
         print(guessed_letters)
+    
+    def get_letters_guessed_list(self):
+        return len(self.__guessed_letters_list)
 
 
