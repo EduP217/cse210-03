@@ -55,7 +55,6 @@ class Puzzle:
             "Frog",
             "Panda",
             "Platypus",
-            "T-rex",
             "Meerkat",
             "Eagle Pole",
             "Farm",
@@ -97,7 +96,7 @@ class Puzzle:
         """
         return self.__word_selected.lower()
     
-    def get_word_selected_length(self):
+    def get_word_selected_letters(self):
         """
         Get word selected length : return the word length of the private attribute.
         """
@@ -106,4 +105,4 @@ class Puzzle:
             if letter != ' ':
                 letters.append(letter)
         
-        return len(letters)
+        return letters

@@ -24,8 +24,13 @@ class Player:
         """
         ask_letter = input('Guess a letter [a-z]: ').lower()
         
+        if ask_letter == ' ':
+            print('WARNING - character not allowed.')
+            return True
+        
         if ask_letter in word_selected:
-            self.__guessed_letters_list.append(ask_letter)
+            if ask_letter not in self.__guessed_letters_list:
+                self.__guessed_letters_list.append(ask_letter)
             return True
         
         return False
@@ -51,7 +56,7 @@ class Player:
             guessed_letters += ' '
         print(guessed_letters)
     
-    def get_letters_guessed_list(self):
-        return len(self.__guessed_letters_list)
+    def get_list_letters_guessed(self):
+        return self.__guessed_letters_list
 
 
